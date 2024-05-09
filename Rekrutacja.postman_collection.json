@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "1e14a30d-f160-440a-974a-32b137edbd8a",
+		"name": "Rekrutacja",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21628520"
+	},
+	"item": [
+		{
+			"name": "https://api.github.com/users/octocat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Name is Octocat\", () => {",
+							"    //parse the response JSON and test three properties",
+							"    const responseJson = pm.response.json();",
+							"    pm.expect(responseJson.name).to.eql('The Octocat');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/users/octocat",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"users",
+						"octocat"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
